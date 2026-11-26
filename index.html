@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Acesse o CinemaBR21 no navegador do seu celular.">
+  <title>CinemaBR21 — Abrir no navegador</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top,#292b34 0,#101114 58%);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(100%,440px);padding:34px 25px;border:1px solid #393b45;border-radius:22px;background:#191a20;text-align:center;box-shadow:0 18px 60px #0008}
+    .brand{font-size:13px;letter-spacing:3px;color:#bfc1cc;font-weight:800}
+    h1{font-size:27px;margin:18px 0 10px}
+    p{color:#c6c7cf;line-height:1.6;font-size:15px}
+    .button{display:block;margin:24px 0 14px;padding:16px 18px;border-radius:12px;background:#f0f0f4;color:#14151a;text-decoration:none;font-weight:800}
+    .instructions{margin-top:20px;padding:16px;border-radius:12px;background:#242630;text-align:left}
+    .instructions strong{color:#fff}
+    .instructions p{font-size:14px;margin:8px 0 0}
+    .muted{font-size:12px;color:#9699a6;margin-top:20px;overflow-wrap:anywhere}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">CINEMABR21</div>
+    <h1>Abra no navegador</h1>
+    <p>Toque no botão para acessar o CinemaBR21. Se o Instagram mantiver a página no navegador interno, siga as instruções abaixo.</p>
+    <a class="button" id="open-site" href="https://cinemabr21.megaembed.com/" target="_blank" rel="noopener noreferrer">ABRIR CINEMABR21</a>
+    <section class="instructions" id="iphone" hidden>
+      <strong>No iPhone (Safari)</strong>
+      <p>Se abrir dentro do Instagram, toque em <strong>•••</strong> no canto da tela e escolha <strong>Abrir no Safari</strong> ou <strong>Abrir no navegador</strong>.</p>
+    </section>
+    <section class="instructions" id="android" hidden>
+      <strong>No Android (Chrome)</strong>
+      <p>Se abrir dentro do Instagram, toque em <strong>⋮</strong> e escolha <strong>Abrir no Chrome</strong> ou <strong>Abrir em navegador externo</strong>.</p>
+    </section>
+    <section class="instructions" id="other" hidden>
+      <strong>Como abrir externamente</strong>
+      <p>Se o link abrir dentro de outro aplicativo, procure o menu de opções e escolha a opção para abrir no navegador padrão.</p>
+    </section>
+    <div class="muted">Destino: cinemabr21.megaembed.com</div>
+  </main>
+  <script>
+    const ua = navigator.userAgent || "";
+    const ios = /iPhone|iPad|iPod/i.test(ua);
+    const android = /Android/i.test(ua);
+    document.getElementById("iphone").hidden = !ios;
+    document.getElementById("android").hidden = !android;
+    document.getElementById("other").hidden = ios || android;
+  </script>
+</body>
+</html>
